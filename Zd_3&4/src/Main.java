@@ -26,7 +26,7 @@ public class Main {
         System.out.println(me.firstName+", Twoje auto to:");
         System.out.println(me.auto.producer+" "+me.auto.model+" "+me.auto.color);
 */
-        me.setSalary(50.0);
+        me.setSalary();
         System.out.println(me.getSalary());
     }
 }

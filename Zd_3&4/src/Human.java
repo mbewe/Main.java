@@ -4,22 +4,29 @@ public class Human {
     String lastName;
     Animal pet;
     Car auto;
-    private Double salary;
+    private String salary;
     String dataSalary;
     Double valueSalary;
+    String listItem;
 
 
-    public Double getSalary() {
-        return this.salary;
+    public String getSalary() {
+        return this.listItem;
+
     }
     public void setSalary() {
-        Scanner input = new Scanner(System.in);
+        Scanner input0 = new Scanner((System.in));
+        System.out.println("Podaj dzisiejsza date w formacie dd/mm/rrrr:");
+        dataSalary = input0.nextLine();
+
+        Scanner input1 = new Scanner(System.in);
         System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
-        valueSalary = input.nextDouble();
+        valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
-            this.salary = valueSalary;
+            this.salary = String.valueOf(valueSalary);
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
+            listItem = this.dataSalary + " - " + this.salary;
         }
         else{
             System.out.println("Pensja nie może być ujemna Panie Januszu!");

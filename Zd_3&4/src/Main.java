@@ -27,6 +27,7 @@ public class Main {
         System.out.println(me.auto.producer+" "+me.auto.model+" "+me.auto.color);
 */
         me.setSalary();
-        System.out.println(me.getSalary());
-    }
+        me.getSalary();
+        me.setSalary();
+        me.getSalary();  }
 }

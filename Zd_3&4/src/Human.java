@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.util.List;
+import java.util.ArrayList;
 public class Human {
     String firstName;
     String lastName;
@@ -8,10 +10,13 @@ public class Human {
     String dataSalary;
     Double valueSalary;
     String listItem;
+    List<String> historyList = new ArrayList<String>();
 
+    public void getSalary() {
+        for(String record:historyList) {
+            System.out.println(record);
+        }
 
-    public String getSalary() {
-        return this.listItem;
 
     }
     public void setSalary() {
@@ -27,6 +32,7 @@ public class Human {
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
+            historyList.add(listItem);
         }
         else{
             System.out.println("Pensja nie może być ujemna Panie Januszu!");

@@ -14,11 +14,10 @@ public class Main {
         System.out.println(me.pet.name);
 
         dog.takeForAWalk();
-        System.out.println(dog.weight);
+        dog.feed();
         dog.takeForAWalk();
         dog.takeForAWalk();
         dog.takeForAWalk();
-
 
     }
 }

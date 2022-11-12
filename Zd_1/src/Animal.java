@@ -3,10 +3,10 @@ public class Animal {
     static final public Double DEFAULT_DOG_WEIGHT = 12.3;
     static final public Double DEFAULT_CAT_WEIGHT = 5.1;
     private static final Double DEFAULT_WORM_WEIGHT =0.25;
-    String specie;
+    final String specie;
     String name;
     Boolean isAlive;
-    Double weight;
+    private Double weight;
 
     Animal(String specie) {
         this.specie = specie;

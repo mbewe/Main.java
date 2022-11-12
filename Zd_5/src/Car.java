@@ -15,7 +15,7 @@ public class Car {
         this.model = model;
     }
 
-    public String toString() {
-        return "Producer: " + this.producer + " Model: " + this.model;
-    }
+  //  public String toString() {
+  //      return "Producer: " + this.producer + " Model: " + this.model;
+  //  }
 }

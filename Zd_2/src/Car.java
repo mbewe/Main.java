@@ -1,7 +1,4 @@
 public class Car {
-
-
-
     final String producer;
     final String model;
     int mileage;

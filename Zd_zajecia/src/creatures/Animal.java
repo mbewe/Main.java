@@ -60,4 +60,7 @@ public class Animal {
             System.out.println("Dzwonie na Policje !!!");
         }
     }
+
+
+
 }

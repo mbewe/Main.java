@@ -15,7 +15,15 @@ public class Car extends Device{
         super(producer, model, yearOfProduction);
     }
 
-  //  public String toString() {
+    @Override
+    public void recharge(Integer percentage) {
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("naładowano");
+    }
+
+    //  public String toString() {
   //      return "Producer: " + this.producer + " Model: " + this.model;
   //  }
 }

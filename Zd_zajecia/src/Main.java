@@ -16,5 +16,7 @@ public class Main {
         me.setSalary();
         me.setCar();
         me.getCar();
+        auto1.recharge(20);
+
     }
 }

@@ -1,6 +1,6 @@
 package devices;
 
-public class Device {
+public abstract class Device {
         final String producer;
         final String model;
         final int yearOfProduction;
@@ -10,6 +10,7 @@ public class Device {
             this.model = model;
             this.yearOfProduction = yearOfProduction;
         }
+        abstract void recharge(Integer percentage);
     }
 
 

@@ -13,6 +13,15 @@ public class Phone extends Device{
         public String toString() {
             return "Producer: " + this.producer + " " + "Number: " + this.telNumber;
         }
+
+    @Override
+    public void recharge(Integer percentage) {
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("ładuje");
+        System.out.println("naładowano");
+
     }
+}
 
 

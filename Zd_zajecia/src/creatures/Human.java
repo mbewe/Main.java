@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.ArrayList;
 import devices.Car;
 
-public class Human {
+public class Human extends Animal{
     public String firstName;
     String lastName;
     Animal pet;
@@ -18,6 +18,10 @@ public class Human {
     String listItem;
 
     List<String> historyList = new ArrayList<String>();
+
+    public Human() {
+        super("homo sapiens");
+    }
 
     public void getSalary() {
         for(String record:historyList) {

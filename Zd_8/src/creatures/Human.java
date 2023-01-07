@@ -1,96 +1,104 @@
 package creatures;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.List;
-import java.util.ArrayList;
+import devices.*;
 
-import devices.Car;
-import devices.Phone;
-import devices.Device;
-import devices.salleable;
 
-public abstract class Human implements salleable{
-    String firstName;
+public class Human extends Animal {
+    public String firstName;
     String lastName;
-    Animal pet;
-    private Car auto;
-    Phone phone;
-    String checkedProducer, checkedModel;
-    Double checkedValue;
-     Double salary;
-    String dataSalary;
-    Double valueSalary;
-    String listItem;
-    double cash;
+    public Animal pet;
+    public Car car;
+    public Double salary = 0.0;
+    public Phone phone;
+    Scanner scan = new Scanner(System.in);
+    Scanner scan2 = new Scanner(System.in);
+    public List<Double> salaryHistoryList = new ArrayList<Double>();
+    public List<String> salaryDateList = new ArrayList<String>();
 
-    List<String> historyList = new ArrayList<String>();
+    public Human() {
+        super("Homo sapiens");
+    }
+
 
     public void getSalary() {
-        for(String record:historyList) {
-            System.out.println(record);
+
+        for(int x=0; x < salaryDateList.size() || x < salaryHistoryList.size() ; x++) {
+            if (this.salaryHistoryList.get(x) < 0) {
+                System.out.println("W dniu: " + this.salaryDateList.get(x)
+                        + ". Pobrano z konta: " + this.salaryHistoryList.get(x));
+            } else {
+                System.out.println("W dniu: " + this.salaryDateList.get(x)
+                        + ". Kwota wynagrodzenia wyniosła: " + this.salaryHistoryList.get(x));
+            }
         }
+
+        System.out.print("Dzisiaj stan konta wynosi: " + this.salary);
+        System.out.println(" ");
 
 
     }
-    public void setSalary() {
-        Scanner input0 = new Scanner((System.in));
-        System.out.println("Podaj dzisiejsza date w formacie dd/mm/rrrr:");
-        dataSalary = input0.nextLine();
 
-        Scanner input1 = new Scanner(System.in);
-        System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
-        valueSalary = input1.nextDouble();
-        if(valueSalary > 0) {
-            this.salary = Double.valueOf(String.valueOf(valueSalary));
-            System.out.println("Dane księgowe zostały zaktualizowane");
-            System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
-            listItem = this.dataSalary + " - " + this.salary;
-            historyList.add(listItem);
+    public void setSalary(){
+        Double salary;
+        String salaryDate;
+        do{
+            System.out.println("Podaj kwotę wypłaty");
+            salary = scan.nextDouble();
+            if(salary <= 0)
+            {
+                System.out.println("Podana kwota jest ujemna lub zerowa - wprowadź kwotę dodatnią.");
+            }
+            else{
+                this.salary += salary;
+                this.salaryHistoryList.add(salary);
+
+                System.out.println("Podaj Datę przelewu");
+                salaryDate = scan2.nextLine();
+                this.salaryDateList.add(salaryDate);
+
+                System.out.println("Dane zostały wysłane do systemu księgowe.");
+                System.out.println("ZUS i US wiedzą o wypłacie więc nie ma sensu ukrywać dochodu.");
+            }
+        }while(salary <= 0);
+    }
+
+    public Car getCar()
+    {
+        return this.car;
+    }
+    public void setCar(Car car){
+        String salaryDate;
+        if(this.salary >= car.value){
+            System.out.println("Udało się kupić auto " + car + " za gotówkę. Z konta zostanie pobrana kwota: "+ car.value);
+            System.out.println("Podaj Datę przelewu za auto: ");
+            salaryDate = scan2.nextLine();
+            this.salaryDateList.add(salaryDate);
+
+            this.salary -= car.value;
+            this.car = car;
+            double carCost = car.value * (-1);
+            this.salaryHistoryList.add(carCost);
+        }
+        else if(this.salary >= car.value/12){
+            System.out.println("Udało się kupić auto na raty");
+            this.car = car;
         }
         else{
-            System.out.println("Pensja nie może być ujemna Panie Januszu!");
-        }
-
-    }
-    public void getCar() {
-        System.out.println(this.auto);
-    }
-    public void setCar() {
-        Scanner input2 = new Scanner((System.in));
-        System.out.println("Podaj producenta samochodu który chcesz kupić: ");
-        checkedProducer = input2.nextLine();
-
-        Scanner input3 = new Scanner((System.in));
-        System.out.println("Podaj model samochodu który chcesz kupić: ");
-        checkedModel = input3.nextLine();
-
-        Scanner input4 = new Scanner((System.in));
-        System.out.println("Podaj wartość samochodu który chcesz kupić: ");
-        checkedValue= input4.nextDouble();
-
-        if(checkedValue < valueSalary) {
-            System.out.println("Ty bogolu, udało Ci sie kupić to auto za gotówkę");
-            Car pussyMagnet = new Car(checkedProducer,checkedModel);
-            this.auto = pussyMagnet;
-        }
-        else if(checkedValue/12 <= valueSalary) {
-            System.out.println("Z wielkim trudem udało sie kupic auto na kredo");
-            Car pussyMagnet = new Car(checkedProducer,checkedModel);
-            this.auto = pussyMagnet;
-        }
-        else {
-            System.out.println("Z czym do ludzi, zapisz się na jakies studia i poszukaj nowej roboty");
+            System.out.println("Nie masz wystarczająco pineniedzy na zakup auta. Zapisz się na studia i znajdź nową robotę albo idź po podwyżkę");
         }
     }
 
-    // Zadanie 6. Punkty(4-5)
-    public String toString() {
-        return this.firstName + " " +this.lastName;
+    public void sell(Human seller, Human buyer, Double price){
+        System.out.println("YOU CAN'T SELL HUMANS");
     }
 
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
+    public String toString(){
+        return "First name: " + this.firstName + " Last name: " + this.lastName + " Animal: " + this.pet + " Car: " + this.car
+                + " Phone: " + this.phone + " Salary: " + salary;
+    }
 
-}
 }

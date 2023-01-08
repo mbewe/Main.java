@@ -1,30 +1,22 @@
-package creatures;
-
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
 
-import devices.*;
+import devices.Car;
 
-
-public class Human extends Animal {
-    public String firstName;
-    public String lastName;
+public class Human {
+    String firstName;
+    String lastName;
     Animal pet;
-    Car auto;
+    private Car auto;
     String checkedProducer, checkedModel;
     Double checkedValue;
-    Double salary;
+    private String salary;
     String dataSalary;
     Double valueSalary;
     String listItem;
-    public String specie;
 
     List<String> historyList = new ArrayList<String>();
-
-    public Human() {
-        super("Homo sapiens");
-    }
 
     public void getSalary() {
         for(String record:historyList) {
@@ -42,7 +34,7 @@ public class Human extends Animal {
         System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
         valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
-            this.salary = Double.valueOf(String.valueOf(valueSalary));
+            this.salary = String.valueOf(valueSalary);
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
@@ -87,10 +79,5 @@ public class Human extends Animal {
     // Zadanie 6. Punkty(4-5)
     public String toString() {
         return this.firstName + " " +this.lastName;
-    }
-
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        System.out.println("Ludzie nie są na sprzedaż!");
     }
 }

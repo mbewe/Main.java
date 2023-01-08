@@ -1,8 +1,4 @@
-package creatures;
-
-import devices.Salleable;
-
-public abstract class Animal implements Salleable {
+public class Animal {
 
     static final public Double DEFAULT_DOG_WEIGHT = 12.3;
     static final public Double DEFAULT_CAT_WEIGHT = 5.1;

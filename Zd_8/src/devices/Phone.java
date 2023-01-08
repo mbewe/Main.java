@@ -1,69 +1,32 @@
 package devices;
 
+import java.sql.SQLOutput;
 
-import creatures.Human;
+public class Phone extends Device {
+    int telNumber;
 
-import java.util.Scanner;
-
-public class Phone extends Device implements salleable{
-
-
-    public Phone(String producer, String model, Integer yearOfProduction)
-    {
-        super(producer, model, yearOfProduction);
+    public Phone(String producer, int telNumber) {
+        this.producer = producer;
+        this.telNumber = telNumber;
     }
 
-
-
-    public void sell(Human seller, Human buyer, Double price){
-
-        Scanner scan3 = new Scanner(System.in);
-
-        String salaryDate;
-
-        if(seller.phone != null)
-        {
-            if(buyer.salary >= price)
-            {
-                seller.phone = null;
-                buyer.phone = this;
-
-                buyer.salary -= price;
-                seller.salary += price;
-
-                System.out.println("Podaj Datę przelewu za towar: ");
-                salaryDate = scan3.nextLine();
-                seller.salaryDateList.add(salaryDate);
-                buyer.salaryDateList.add(salaryDate);
-
-                double goodsCost = price * (-1);
-                buyer.salaryHistoryList.add(goodsCost);
-                seller.salaryHistoryList.add(price);
-            }
-            else
-            {
-                System.out.println("Nie masz tyle pieniedzy");
-            }
-        }
-        else {
-            System.out.println("Nie posiadasz tego na sprzedaż.");
-        }
-        System.out.println("Phone: " + this + "- ZOSTASŁ SPRZEDANY");
-    }
-    @Override
-    public void recharge(Integer precentage) {
-        System.out.println("Ładuje");
-        System.out.println("Ładuje");
-        System.out.println("Naładowano" + precentage);
-    }
-    @Override
-    public void turnOn(){
-        System.out.println("Phone włączony");
+    void instalAnnApp(String nameApp, String version, String serverIP) {
+        System.out.println("Sprawdzanie miejsca na dysku...");
+        System.out.println("Sprawdzenie dostępu...");
+        System.out.println("Sprawdzenie płatności...");
+        System.out.println("Pobieranie aplikacji...");
+        System.out.println("Instalowanie aplikacji");
     }
 
-    public String toString() {
-        return "Producer: " + this.producer + " " + "Model: " + this.model;
+    void instalAnnApp(String nameApp, String version) {
+        this.instalAnnApp(nameApp, version, "192.1.1.567");
+    }
+
+    void instalAnnApp(String nameApp) {
+        this.instalAnnApp(nameApp, "1.0");
+    }
+    public void instalAnnApp() {
+        this.instalAnnApp("Unknown");
     }
 }
-
 

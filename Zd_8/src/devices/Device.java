@@ -20,7 +20,8 @@ public abstract class Device {
             System.out.println("Już jest wyłączone!!!");
         }
     }
-    public String toString() {
+
+     public String toString() {
         return "Producer: "+this.producer+ " Year of production: " + this.yearOfProduction+" Mode: " + this.mode;
     }
 }

@@ -10,7 +10,7 @@ import devices.*;
 public class Human extends Animal {
     public String firstName;
     public String lastName;
-    Animal pet;
+    public Animal pet;
     Car auto;
     String checkedProducer, checkedModel;
     Double checkedValue;
@@ -18,7 +18,7 @@ public class Human extends Animal {
     String dataSalary;
     Double valueSalary;
     String listItem;
-    public String specie;
+    public Double cash;
 
     List<String> historyList = new ArrayList<String>();
 

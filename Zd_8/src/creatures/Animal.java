@@ -2,7 +2,7 @@ package creatures;
 
 import devices.Salleable;
 
-public abstract class Animal implements Salleable {
+public  class Animal implements Salleable {
 
     static final public Double DEFAULT_DOG_WEIGHT = 12.3;
     static final public Double DEFAULT_CAT_WEIGHT = 5.1;
@@ -12,7 +12,7 @@ public abstract class Animal implements Salleable {
     Boolean isAlive;
     Double weight;
 
-    Animal(String specie) {
+    public Animal(String specie) {
         this.specie = specie;
         this.isAlive = true;
 
@@ -41,6 +41,7 @@ public abstract class Animal implements Salleable {
         if (this.isAlive == true) {
             this.weight += 0.5;
             System.out.println("dzięki za żarcie");
+            this.isAlive = false;
         } else {
             System.out.println("Wszystko dobrze z głową?");
         }
@@ -62,7 +63,22 @@ public abstract class Animal implements Salleable {
             System.out.println("Dzwonie na Policje !!!");
         }
     }
-    // Zadanie 6. Punkty(4-5)
+
     public String toString() {return this.specie + " " + this.name;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        if (seller.pet != null){
+            if(buyer.cash >= price){
+                System.out.println("Twój " + seller.pet+ " został sprzedany " + buyer.name +" za " + price);
+            }
+            else {
+                System.out.println("Nie stać tego Gamonia na "+ seller.pet);
+            }
+        }
+        else {
+            System.out.println("Sprzedawca nie ma nic na spredzaż");
+        }
     }
 }

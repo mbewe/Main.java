@@ -1,6 +1,7 @@
 package creatures;
 
 import devices.Salleable;
+import creatures.Human;
 
 public  class Animal implements Salleable {
 
@@ -69,16 +70,15 @@ public  class Animal implements Salleable {
 
     @Override
     public void sell(Human seller, Human buyer, Double price) {
-        if (seller.pet != null){
-            if(buyer.cash >= price){
-                System.out.println("Twój " + seller.pet+ " został sprzedany " + buyer.name +" za " + price);
+        if (seller.pet != null) {
+            if (price <= buyer.salary) {
+                buyer.pet = seller.pet;
+                seller.pet = null;
+            } else {
+                System.out.println("Kupującego nie stać!");
             }
-            else {
-                System.out.println("Nie stać tego Gamonia na "+ seller.pet);
-            }
-        }
-        else {
-            System.out.println("Sprzedawca nie ma nic na spredzaż");
+        } else {
+            System.out.println("Sprzedawca nie ma tego na sprzedaż!");
         }
     }
 }

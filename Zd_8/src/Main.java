@@ -7,13 +7,12 @@ import creatures.*;
 public class Main {
     public static void main(String[] args) {
 
-        Human me = new Human();
-        me.firstName = "Kacper";
+        Human me = new Human("kacper");
 
 
-        Human you = new Human();
 
-        you.firstName = "Wojciech";
+        Human you = new Human("Wojciech");
+
         you.lastName = "Jabłoński";
 
         Car bryka = new Car("TOYOTA", "YARIS");
@@ -22,13 +21,15 @@ public class Main {
         Phone służbowy = new Phone("MOTOROLA", 533788911);
         służbowy.yearOfProduction = 2001;
 
-        Animal burek = new Animal("canis");
+        Animal dog = new Animal("canis");
 
-        me.pet = burek;
+        me.pet = dog;
 
         you.setSalary();
 
-        burek.sell(me,you,100.0);
+        me.tel = służbowy;
+        //dog.sell(me, you, 50.0);
+        //służbowy.sell(me, you, 10.0);
 
 
 

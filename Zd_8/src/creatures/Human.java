@@ -7,10 +7,12 @@ import java.util.ArrayList;
 import devices.*;
 
 
-public class Human extends Animal {
+public class Human  {
     public String firstName;
     public String lastName;
     public Animal pet;
+    public Phone tel;
+
     Car auto;
     String checkedProducer, checkedModel;
     Double checkedValue;
@@ -18,12 +20,13 @@ public class Human extends Animal {
     String dataSalary;
     Double valueSalary;
     String listItem;
-    public Double cash;
+    public Double cash = 100.0;
 
     List<String> historyList = new ArrayList<String>();
 
-    public Human() {
-        super("Homo sapiens");
+     public Human(String names) {
+//        super("Homo sapiens");
+         this.firstName = names;
     }
 
     public void getSalary() {
@@ -89,8 +92,8 @@ public class Human extends Animal {
         return this.firstName + " " +this.lastName;
     }
 
-    @Override
-    public void sell(Human seller, Human buyer, Double price) {
-        System.out.println("Ludzie nie są na sprzedaż!");
-    }
+////    @Override
+////    public void sell(Human seller, Human buyer, Double price) {
+//    System.out.println("Ludzie nie są na sprzedaż!");
+//    }
 }

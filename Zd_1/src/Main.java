@@ -3,8 +3,6 @@ public class Main {
 
         Animal dog = new Animal("canis");
         dog.name = "Szarik";
-        dog.isAlive = true;
-
 
         System.out.println(dog.name);
 

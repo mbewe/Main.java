@@ -48,6 +48,7 @@ public class Animal {
             if (this.isAlive == true) {
                 this.weight -= 5.25;
                 if (this.weight <= 0) {
+                    this.isAlive = false;
                     System.out.println("Zwierze nie żyje, dzwonie na Policje !");
                 } else {
                     System.out.println("Dzięki za spacer!!!");

@@ -3,31 +3,24 @@ package creatures;
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
-
 import devices.*;
 
 
-public class Human  {
+public class Human implements Salleable {
     public String firstName;
     public String lastName;
     public Animal pet;
+    public Car auto;
     public Phone tel;
-
-    Car auto;
     String checkedProducer, checkedModel;
     Double checkedValue;
-    Double salary;
+    private String salary;
+    public Double cash = 100.0;
     String dataSalary;
     Double valueSalary;
     String listItem;
-    public Double cash = 100.0;
 
     List<String> historyList = new ArrayList<String>();
-
-     public Human(String names) {
-//        super("Homo sapiens");
-         this.firstName = names;
-    }
 
     public void getSalary() {
         for(String record:historyList) {
@@ -45,11 +38,12 @@ public class Human  {
         System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
         valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
-            this.salary = Double.valueOf(String.valueOf(valueSalary));
+            this.salary = String.valueOf(valueSalary);
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
             historyList.add(listItem);
+            this.cash += valueSalary;
         }
         else{
             System.out.println("Pensja nie może być ujemna Panie Januszu!");
@@ -92,8 +86,8 @@ public class Human  {
         return this.firstName + " " +this.lastName;
     }
 
-////    @Override
-////    public void sell(Human seller, Human buyer, Double price) {
-//    System.out.println("Ludzie nie są na sprzedaż!");
-//    }
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        System.out.println("Ludzie nie są na sprzedaż !!!");
+    }
 }

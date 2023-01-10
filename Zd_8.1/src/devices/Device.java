@@ -1,9 +1,12 @@
 package devices;
 
-public abstract class Device {
-    String producer;
-    boolean mode;
+import creatures.Human;
+
+public abstract class Device implements Salleable{
+    public String producer;
+    public boolean mode;
     public int yearOfProduction;
+
 
     public void turnOn() {
 
@@ -13,15 +16,14 @@ public abstract class Device {
                     System.out.println("Już jest włączone!!!");
                 }
             }
-   public void turnOff(){
+    public void turnOff(){
         if (this.mode == true) {
             this.mode = false;
         } else {
             System.out.println("Już jest wyłączone!!!");
         }
     }
-
-     public String toString() {
+    public String toString() {
         return "Producer: "+this.producer+ " Year of production: " + this.yearOfProduction+" Mode: " + this.mode;
     }
 }

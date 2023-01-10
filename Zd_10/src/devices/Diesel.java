@@ -2,7 +2,7 @@ package devices;
 
 
 public class Diesel extends Car {
-    int batteryPower = 1;
+
 
     public Diesel(String producer, String model) {
         super(producer, model);
@@ -11,7 +11,13 @@ public class Diesel extends Car {
 
     @Override
     public void refuel() {
-        this.batteryPower = 100;
+        System.out.println("Pojedz na stacje");
+        System.out.println("Podjedz pod dystrybutor");
+        System.out.println("Wlew masz z drugiej strony, jeszcze raz");
+        System.out.println("Łap za weża z czarna głową");
+        System.out.println("Cena z litr Cię nie interesuje, zawsze lejesz za 50 zł");
+        System.out.println("Coraz szybciej te dystrybutory pompują");
+
 
     }
 }

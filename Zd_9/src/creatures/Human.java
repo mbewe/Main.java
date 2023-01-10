@@ -1,17 +1,21 @@
+package creatures;
+
 import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;
+import devices.*;
 
-import devices.Car;
 
-public class Human {
-    String firstName;
-    String lastName;
-    Animal pet;
-    private Car auto;
+public class Human implements Salleable {
+    public String firstName;
+    public String lastName;
+    public Animal pet;
+    public Car auto;
+    public Phone tel;
     String checkedProducer, checkedModel;
     Double checkedValue;
     private String salary;
+    public Double cash = 100.0;
     String dataSalary;
     Double valueSalary;
     String listItem;
@@ -39,6 +43,7 @@ public class Human {
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
             historyList.add(listItem);
+            this.cash += valueSalary;
         }
         else{
             System.out.println("Pensja nie może być ujemna Panie Januszu!");
@@ -79,5 +84,10 @@ public class Human {
     // Zadanie 6. Punkty(4-5)
     public String toString() {
         return this.firstName + " " +this.lastName;
+    }
+
+    @Override
+    public void sell(Human seller, Human buyer, Double price) {
+        System.out.println("Ludzie nie są na sprzedaż !!!");
     }
 }

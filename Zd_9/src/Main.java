@@ -15,7 +15,7 @@ public class Main {
         you.firstName = "Wojciech";
         you.lastName = "Jabłoński";
 
-        LPG bryka = new LPG("TOYOTA", "YARIS");
+        Car bryka = new Car("TOYOTA", "YARIS");
         bryka.yearOfProduction= 1995;
 
         Phone służbowy = new Phone("MOTOROLA", 533788911);

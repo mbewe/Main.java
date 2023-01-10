@@ -11,7 +11,12 @@ public class LPG extends Car {
 
     @Override
     public void refuel() {
-        this.batteryPower = 100;
+            System.out.println("Pojedz na stacje");
+            System.out.println("Podjedz pod dystrybutor");
+            System.out.println("Wyjmij korek wstydu i przykręć");
+            System.out.println("Jak to było z tym zaciskiem?");
+            System.out.println("No i pełen bak");
+            System.out.println("O cho, jeszcze na hotdoga starczy");
 
     }
 }

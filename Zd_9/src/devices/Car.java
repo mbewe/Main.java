@@ -2,7 +2,7 @@ package devices;
 
 import creatures.Human;
 
-public abstract class Car extends Device{
+public class Car extends Device{
 
     final String model;
     int mileage;
@@ -17,7 +17,7 @@ public abstract class Car extends Device{
 
 
     }
-
+// Zadanie 6. Punkt(1)
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -29,7 +29,6 @@ public abstract class Car extends Device{
         return this.model == auto.model &&
                 this.producer == auto.producer;
     }
-    public abstract void refuel();
 
     @Override
     public void sell(Human seller, Human buyer, Double price) {

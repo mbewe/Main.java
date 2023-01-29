@@ -11,7 +11,7 @@ public class Human {
     private Car auto;
     String checkedProducer, checkedModel;
     Double checkedValue;
-    private String salary;
+    private Double salary;
     String dataSalary;
     Double valueSalary;
     String listItem;
@@ -34,7 +34,7 @@ public class Human {
         System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
         valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
-            this.salary = String.valueOf(valueSalary);
+            this.salary = valueSalary;
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;

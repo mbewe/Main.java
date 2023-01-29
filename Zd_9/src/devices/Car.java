@@ -29,7 +29,25 @@ public class Car extends Device{
         return this.model == auto.model &&
                 this.producer == auto.producer;
     }
+    @Override
+    public void turnOn() {
+        if (this.mode == false) {
+            this.mode = true;
+            System.out.println("Brum brum");
+        } else {
+            System.out.println("Już jest włączone!!!");
+        }
+    }
 
+    @Override
+    public void turnOff(){
+        if (this.mode == true) {
+            this.mode = false;
+            System.out.println("Pryyy");
+        } else {
+            System.out.println("Już jest wyłączone!!!");
+        }
+    }
     @Override
     public void sell(Human seller, Human buyer, Double price) {
         if (seller.auto.producer == this.producer || seller.auto.model == this.model ) {

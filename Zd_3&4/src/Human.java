@@ -29,7 +29,7 @@ public class Human {
         valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
             this.salary = String.valueOf(valueSalary);
-            System.out.println("Dane księgowe zostały zaktualizowane");
+            System.out.println("Dane księgowe zostały zaktualizowane, aneks odbierze z działu kadr.");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
             historyList.add(listItem);

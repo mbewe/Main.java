@@ -10,8 +10,6 @@ public class Main {
         Human me = new Human();
         me.firstName = "Kacper";
 
-        //Zadanie 6. Punkty(1-3)
-
         Car auto1 = new Car("Mazda","6");
         Car auto2 = new Car("Mazda","6");
 
@@ -20,7 +18,6 @@ public class Main {
         System.out.println(auto1);
         System.out.println(auto2);
 
-        //Zadanie 6. Punkty(4-5)
 
         Human you = new Human();
         you.firstName = "Wojciech";

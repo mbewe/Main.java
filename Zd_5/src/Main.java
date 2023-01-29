@@ -4,11 +4,6 @@ public class Main {
         Human me = new Human();
         me.firstName = "Kacper";
 
-        Car auto1 = new Car("Mazda","6");
-        Car auto2 = new Car("Mazda","6");
-
-        System.out.println(auto1);
-        System.out.println(auto2);
 
         me.setSalary();
         me.setCar();

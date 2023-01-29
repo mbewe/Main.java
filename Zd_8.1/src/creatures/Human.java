@@ -14,7 +14,7 @@ public class Human implements Salleable {
     public Phone tel;
     String checkedProducer, checkedModel;
     Double checkedValue;
-    private String salary;
+    private Double salary;
     public Double cash = 100.0;
     String dataSalary;
     Double valueSalary;
@@ -38,7 +38,7 @@ public class Human implements Salleable {
         System.out.println("Ile zarobi nasz pracownik "+firstName+"?");
         valueSalary = input1.nextDouble();
         if(valueSalary > 0) {
-            this.salary = String.valueOf(valueSalary);
+            this.salary = valueSalary;
             System.out.println("Dane księgowe zostały zaktualizowane");
             System.out.println("ZUS, US oraz Chrześcijański Zbór Świadków Jehowy zostali poinformowani o zmianie wysokości wypłaty, płacz i płać!");
             listItem = this.dataSalary + " - " + this.salary;
@@ -81,7 +81,6 @@ public class Human implements Salleable {
         }
     }
 
-    // Zadanie 6. Punkty(4-5)
     public String toString() {
         return this.firstName + " " +this.lastName;
     }

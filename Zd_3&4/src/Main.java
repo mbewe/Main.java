@@ -7,5 +7,7 @@ public class Main {
         me.setSalary();
         me.getSalary();
         me.setSalary();
-        me.getSalary();  }
+        me.getSalary();
+
+    }
 }

@@ -1,10 +1,11 @@
 package devices;
 
-public abstract class Device {
-    String producer;
-    boolean mode;
+import creatures.Human;
+
+public abstract class Device implements Salleable{
+    public String producer;
+    public boolean mode;
     public int yearOfProduction;
-    Double value;
 
 
     public void turnOn() {

@@ -61,7 +61,7 @@ public class Phone extends Device {
     }
 
     public void instalAnnApp(String appName, String version, String server) {
-        System.out.println("Próba instalacji aplikacji" + appName + " w wersji: " + version + "z serwera" + server);
+        System.out.println("Próba instalacji aplikacji " + appName + " w wersji: " + version + " z serwera " + server);
         System.out.println("Sprawdzanie płatności");
         System.out.println("Sprawdzanie miejsca na dysku...");
         System.out.println("Pobieranie aplikacji...");

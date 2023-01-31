@@ -6,8 +6,8 @@ import creatures.Human;
 public class LPG extends Car {
     int batteryPower = 1;
 
-    public LPG(String producer, String model) {
-        super(producer, model);
+    public LPG(String producer, String model, Double value) {
+        super(producer, model, value);
     }
 
 

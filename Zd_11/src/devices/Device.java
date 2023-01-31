@@ -6,6 +6,7 @@ public abstract class Device implements Salleable{
     public String producer;
     public boolean mode;
     public int yearOfProduction;
+    Double value;
 
 
     public void turnOn() {

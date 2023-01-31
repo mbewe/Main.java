@@ -14,10 +14,10 @@ public class Main {
         Human you = new Human();
         you.firstName = "Wojciech";
         you.lastName = "Jabłoński";
-        
+
         me.setSalary();
         me.setCar();
-
+        me.getCar(0).sell(me,you,5000.0);
 
     }
 }

@@ -10,11 +10,11 @@ public abstract class Car extends Device{
     String type;
     Double value;
 
-    public Car(String producer, String model) {
+    public Car(String producer, String model,Double value) {
 
         this.producer = producer;
         this.model = model;
-
+        this.value = value;
 
     }
 

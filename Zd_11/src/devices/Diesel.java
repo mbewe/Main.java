@@ -6,8 +6,8 @@ import creatures.Human;
 public class Diesel extends Car {
 
 
-    public Diesel(String producer, String model) {
-        super(producer, model);
+    public Diesel(String producer, String model,Double value) {
+        super(producer, model, value);
     }
 
 

@@ -4,8 +4,8 @@ package devices;
 public class Electric extends Car {
     int batteryPower = 1;
 
-    public Electric(String producer, String model) {
-        super(producer, model);
+    public Electric(String producer, String model, Double value) {
+        super(producer, model, value);
     }
 
 

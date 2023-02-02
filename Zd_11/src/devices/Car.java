@@ -2,12 +2,11 @@ package devices;
 
 import creatures.Human;
 
+import java.util.Objects;
+
 public abstract class Car extends Device{
 
     final String model;
-    int mileage;
-    String color;
-    String type;
     public Double value;
 
     public Car(String producer, String model,Double value, int yearOfProduction) {
@@ -27,14 +26,14 @@ public abstract class Car extends Device{
             return false;
         }
         Car auto = (Car) o;
-        return this.model == auto.model &&
-                this.producer == auto.producer;
+        return Objects.equals(this.model, auto.model) &&
+                Objects.equals(this.producer, auto.producer);
     }
     public abstract void refuel();
 
     @Override
     public void turnOn() {
-        if (this.mode == false) {
+        if (!this.mode) {
             this.mode = true;
             System.out.println("Brum brum");
         } else {
@@ -44,7 +43,7 @@ public abstract class Car extends Device{
 
     @Override
     public void turnOff(){
-        if (this.mode == true) {
+        if (this.mode) {
             this.mode = false;
             System.out.println("Pryyy");
         } else {

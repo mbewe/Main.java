@@ -1,7 +1,7 @@
-
-import java.sql.SQLOutput;
-import devices.*;
-import creatures.*;
+import creatures.Human;
+import devices.Diesel;
+import devices.Electric;
+import devices.LPG;
 
 
 

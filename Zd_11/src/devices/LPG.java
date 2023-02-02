@@ -1,13 +1,11 @@
 package devices;
 
 
-import creatures.Human;
-
 public class LPG extends Car {
     int batteryPower = 1;
 
-    public LPG(String producer, String model, Double value) {
-        super(producer, model, value);
+    public LPG(String producer, String model, Double value, int yearOfProduction) {
+        super(producer, model, value, yearOfProduction);
     }
 
 

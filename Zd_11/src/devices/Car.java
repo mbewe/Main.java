@@ -10,11 +10,12 @@ public abstract class Car extends Device{
     String type;
     public Double value;
 
-    public Car(String producer, String model,Double value) {
+    public Car(String producer, String model,Double value, int yearOfProduction) {
 
         this.producer = producer;
         this.model = model;
         this.value = value;
+        this.yearOfProduction = yearOfProduction;
 
     }
 
@@ -54,16 +55,27 @@ public abstract class Car extends Device{
         return this.yearOfProduction;
     }
     @Override
-    public void sell(Human seller, Human buyer, Double price) {
-//        if (seller.auto.producer == this.producer || seller.auto.model == this.model ) {
-//            if (price <= buyer.cash) {
-//                buyer.auto = seller.auto;
-//                seller.auto = null;
-//            } else {
-//                System.out.println("Kupującego nie stać!");
-//            }
-//        } else {
-//            System.out.println("Sprzedawca nie ma tego na sprzedaż!");
-//        }
-   }
-}
+    public void sell(Human seller, Human buyer, Double price) throws Exception {
+        if (!seller.hasACar(this)) {
+            throw new Exception("Sprzedawca nie ma tego auta.");
+        }
+        if (!buyer.spaceChecker()) {
+            throw new Exception("Kupujący nie ma więcej miejsca w garażu.");
+        }
+        if (!buyer.moneyChecker(price)) {
+            throw new Exception("Kupujący nie ma dość pieniędzy.");
+        }
+
+
+        seller.removeCar(this);
+        buyer.addCar(this);
+        seller.addMoney(price);
+        buyer.collectMoney(price);
+
+        System.out.println("Transakcja się powiodła. To auto: " + this + " zostało sprzedane do: " + buyer);
+    }
+        public String toString() {
+            return this.producer + " " + this.model + " " + this.yearOfProduction;
+        }
+        }
+

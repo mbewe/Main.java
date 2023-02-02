@@ -112,6 +112,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     case "Diesel": {
@@ -119,6 +120,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     case "Electric": {
@@ -126,6 +128,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     default:
@@ -139,6 +142,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     case "Diesel": {
@@ -146,6 +150,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     case "Electric": {
@@ -153,7 +158,7 @@ public class Human implements Salleable {
                         this.garage[parkingNumber] = pussyMagnet;
                         pussyMagnet.curentOwner = this;
                         pussyMagnet.ownerList.add(this);
-
+                        pussyMagnet.transactionCounter += 1;
                         break;
                     }
                     default:
@@ -167,10 +172,12 @@ public class Human implements Salleable {
             System.out.println("Nie ma takiego miejsca w tym garażu");
         }
     }
+
     public void setCar(Car car, int index) {
         this.garage[index] = car;
         car.curentOwner = this;
         car.ownerList.add(this);
+        car.transactionCounter += 1;
 
     }
     public void valueOfCars() {
@@ -193,37 +200,35 @@ public class Human implements Salleable {
     }
 
     public boolean hasACar(Car car) {
-        Boolean hasACar = false;
+        boolean hasACar = false;
 
-        for (Integer i = 0; i < this.garage.length; i++) {
-            if (car.equals(this.garage[i])) {
+        for (Car value : this.garage) {
+            if (car.equals(value)) {
                 hasACar = true;
+                break;
             }
         }
         return hasACar;
     }
 
     public boolean spaceChecker() {
-        Boolean haveFreeSpace = false;
+        boolean haveFreeSpace = false;
 
-        for (Integer i = 0; i < this.garage.length; i++) {
-            if (this.garage[i] == null) {
+        for (Car car : this.garage) {
+            if (car == null) {
                 haveFreeSpace = true;
+                break;
             }
         }
         return haveFreeSpace;
     }
 
     public boolean moneyChecker(Double price) {
-        Boolean hasMoney = true;
-        if (price > this.cash) {
-            hasMoney = false;
-        }
-        return hasMoney;
+        return price <= this.cash;
     }
 
     public void removeCar(Car car) {
-        for (Integer i = 0; i < this.garage.length; i++) {
+        for (int i = 0; i < this.garage.length; i++) {
             if (car.equals(this.garage[i])) {
                 this.garage[i] = null;
             }
@@ -231,7 +236,7 @@ public class Human implements Salleable {
     }
 
     public void addCar(Car car) {
-        for (Integer i = 0; i < this.garage.length; i++) {
+        for (int i = 0; i < this.garage.length; i++) {
             if (this.garage[i] == null) {
                 this.garage[i] = car;
                 return;

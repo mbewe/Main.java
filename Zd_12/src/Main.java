@@ -29,6 +29,8 @@ public class Main {
         car1.ownerChecker(me);
         System.out.println(car1.curentOwner);
         System.out.println(car2.curentOwner);
+        car1.checkingTransactions(me,you);
+        car1.checkingTransactions(you,me);
 
     }
 }

@@ -12,7 +12,7 @@ public abstract class Car extends Device{
     public List<Human> ownerList = new ArrayList<Human>();
     public List<Transactions> transactionsHistoryList = new ArrayList<Transactions>();
     public Human curentOwner;
-    public int transactionCounter = 1;
+    public int transactionCounter = 0;
 
     public Car(String producer, String model,Double value, int yearOfProduction) {
 
@@ -91,6 +91,16 @@ public abstract class Car extends Device{
         } else {
             System.out.println(human.firstName + " nigdy nie był właścicielem tego pojazdu");
         }
+    }
+
+    public void checkingTransactions(Human seller, Human buyer) {
+        for (Transactions transactions : transactionsHistoryList) {
+            if (seller == transactions.seller && buyer == transactions.buyer) {
+                System.out.println(seller + " sprzedał to auto " + buyer + "owi");
+                return;
+            }
+        }
+        System.out.println("Taka transakcja nie miała miejsca");
     }
     @Override
         public String toString() {

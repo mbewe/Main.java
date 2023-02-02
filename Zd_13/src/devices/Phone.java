@@ -28,7 +28,7 @@ public class Phone extends Device {
                 human.cash -= price1;
                 Application app = new Application(name1, version1, price1);
                 this.collectionOfApplications.add(app);
-                System.out.println("Aplikacja: " + app + " została zainstalowana.");
+                System.out.println("Aplikacja: " + app + " została zainstalowana." + price1);
             }
         } else {
             System.out.println("Aplikacja jest już zainstalowana.");
@@ -65,7 +65,7 @@ public class Phone extends Device {
 
     public void freeApp() {
         for (int i = 0; i < this.collectionOfApplications.size(); i++) {
-            if (this.collectionOfApplications.get(i).price.equals(0.0)) {
+            if (this.collectionOfApplications.get(i).price == 0.0) {
                 System.out.println("Darmowa aplikacja - " + this.collectionOfApplications.get(i));
             }
         }
@@ -92,7 +92,7 @@ public class Phone extends Device {
 
 
         for (Application app : collectionOfApplications) {
-            System.out.println(app.price);
+            System.out.println(app.price + " -  " + app.name);
         }
     }
 

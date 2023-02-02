@@ -21,15 +21,18 @@ public class Main {
         System.out.println(me.cash);
         phone1.installApp(me,"Signal", 7.0, "1.03");
         phone1.installApp(me,"Chrome", 2.5, "1.03");
-        phone1.installApp(me,"Gmail", 10.0, "1.03");
-        phone1.installApp(me,"Hacker Typer", 100.0, "1.03");
+        phone1.installApp(me,"Gmail", 100.0, "1.03");
+        phone1.installApp(me,"Hacker Typer", 80.0, "1.03");
         phone1.installApp(me,"Fb", 1.0, "1.03");
 
-   phone1.freeApp();
-//    phone1.valuesOfApps();
-//    phone1.allAppsNames();
-//    phone1.allAppsPrice();
-//        System.out.println(phone1.collectionOfApplications);
+    phone1.freeApp();
+
+
+
+    phone1.valuesOfApps();
+    phone1.allAppsNames();
+    phone1.allAppsPrice();
+
 
 
 

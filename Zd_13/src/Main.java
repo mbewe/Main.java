@@ -11,26 +11,27 @@ public class Main {
         Human you = new Human();
         you.firstName = "Wojciech";
         you.lastName = "Jabłoński";
+        me.cash = 1000.0;
 
-        me.cash += 1000000;
-        LPG car1 = new LPG("KIA", "CEED", 5000.0, 2005);
-        Diesel car2  = new Diesel("Mercedes", "Vito", 7500.0,  2002);
-        Electric car3 = new Electric("Tesla", "3", 10000.0, 2015);
+        Phone phone1 = new Phone("motorola", 123456789);
+        me.tel =phone1;
+        phone1.installApp(me,"Fb", 1.0, "1.03");
+        phone1.installApp(me,"Instagram", 8.0, "1.06");
+        phone1.installApp(me,"Janosik", 0.0, "1.03");
+        System.out.println(me.cash);
+        phone1.installApp(me,"Signal", 7.0, "1.03");
+        phone1.installApp(me,"Chrome", 2.5, "1.03");
+        phone1.installApp(me,"Gmail", 10.0, "1.03");
+        phone1.installApp(me,"Hacker Typer", 100.0, "1.03");
+        phone1.installApp(me,"Fb", 1.0, "1.03");
 
-        me.setCar(car1,0);
-        me.setCar(car2,1);
-        me.setCar(car3, 2);
+   phone1.freeApp();
+//    phone1.valuesOfApps();
+//    phone1.allAppsNames();
+//    phone1.allAppsPrice();
+//        System.out.println(phone1.collectionOfApplications);
 
 
-        you.cash = 5000.0;
-
-        me.getCar(0).sell(me,you,1000.0);
-
-        car1.ownerChecker(me);
-        System.out.println(car1.curentOwner);
-        System.out.println(car2.curentOwner);
-        car1.checkingTransactions(me,you);
-        car1.checkingTransactions(you,me);
 
     }
 }

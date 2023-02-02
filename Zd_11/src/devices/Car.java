@@ -50,6 +50,9 @@ public abstract class Car extends Device{
             System.out.println("Już jest wyłączone!!!");
         }
     }
+    public int getYearOfProduction(){
+        return this.yearOfProduction;
+    }
     @Override
     public void sell(Human seller, Human buyer, Double price) {
 //        if (seller.auto.producer == this.producer || seller.auto.model == this.model ) {

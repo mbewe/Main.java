@@ -21,30 +21,14 @@ public class Main {
         me.setCar(car2,1);
         me.setCar(car3, 2);
 
-        me.valueOfCars();
-        System.out.println(me.getCar(0));
-        System.out.println(me.getCar(1));
-        System.out.println(me.getCar(2));
-
-
-        me.sortGarageByYearOfProd();
-
-        System.out.println(me.getCar(0));
-        System.out.println(me.getCar(1));
-        System.out.println(me.getCar(2));
 
         you.cash = 5000.0;
-        System.out.println(me.cash);
-        System.out.println(you.cash);
-        me.getCar(0).sell(me,you,1000.0);
-        System.out.println(me.cash);
-        System.out.println(you.cash);
-        System.out.println(me.getCar(0));
-        System.out.println(me.getCar(1));
-        System.out.println(me.getCar(2));
 
-        System.out.println(you.getCar(0));
-        System.out.println(you.getCar(1));
-        System.out.println(you.getCar(2));
+        me.getCar(0).sell(me,you,1000.0);
+
+        car1.ownerChecker(me);
+        System.out.println(car1.curentOwner);
+        System.out.println(car2.curentOwner);
+
     }
 }

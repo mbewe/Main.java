@@ -110,16 +110,22 @@ public class Human implements Salleable {
                     case "LPG": {
                         Car pussyMagnet = new LPG(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
                         break;
                     }
                     case "Diesel": {
                         Car pussyMagnet = new Diesel(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
                         break;
                     }
                     case "Electric": {
                         Car pussyMagnet = new Electric(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
                         break;
                     }
                     default:
@@ -131,16 +137,23 @@ public class Human implements Salleable {
                     case "LPG": {
                         Car pussyMagnet = new LPG(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
                         break;
                     }
                     case "Diesel": {
                         Car pussyMagnet = new Diesel(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
                         break;
                     }
                     case "Electric": {
                         Car pussyMagnet = new Electric(checkedProducer, checkedModel, checkedValue, checkedYearOfProduction);
                         this.garage[parkingNumber] = pussyMagnet;
+                        pussyMagnet.curentOwner = this;
+                        pussyMagnet.ownerList.add(this);
+
                         break;
                     }
                     default:
@@ -156,6 +169,8 @@ public class Human implements Salleable {
     }
     public void setCar(Car car, int index) {
         this.garage[index] = car;
+        car.curentOwner = this;
+        car.ownerList.add(this);
 
     }
     public void valueOfCars() {

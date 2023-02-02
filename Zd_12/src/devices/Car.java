@@ -11,7 +11,7 @@ public abstract class Car extends Device{
     public Double value;
     public List<Human> ownerList = new ArrayList<Human>();
     public List<Transactions> transactionsHistoryList = new ArrayList<Transactions>();
-    public String curentOwner;
+    public Human curentOwner;
     public int transactionCounter = 1;
 
     public Car(String producer, String model,Double value, int yearOfProduction) {
@@ -68,25 +68,26 @@ public abstract class Car extends Device{
         }
         if (!buyer.moneyChecker(price)) {
             throw new Exception("Kupujący nie ma dość pieniędzy.");
+        } else {
+
+            seller.removeCar(this);
+            buyer.addCar(this);
+            seller.addMoney(price);
+            buyer.collectMoney(price);
+            seller.historyList.add("Transakcja sprzedaż auta - " + price);
+            buyer.historyList.add("Transakcja kupno auta - " + price * -1);
+            this.ownerList.add(buyer);
+            this.transactionsHistoryList.add(new Transactions(seller, buyer, price));
+            this.transactionCounter++;
+            this.curentOwner = buyer;
+
+
+            System.out.println("Transakcja się powiodła. To auto: " + seller.firstName + " zostało sprzedane do: " + buyer.firstName);
         }
-
-
-        seller.removeCar(this);
-        buyer.addCar(this);
-        seller.addMoney(price);
-        buyer.collectMoney(price);
-        seller.historyList.add("Transakcja sprzedaż auta - " + price);
-        buyer.historyList.add("Transakcja kupno auta - " + price * -1);
-        this.ownerList.add(buyer);
-        this.transactionsHistoryList.add(new Transactions(seller, buyer, price));
-        this.transactionCounter++;
-
-
-        System.out.println("Transakcja się powiodła. To auto: " + this + " zostało sprzedane do: " + buyer);
     }
     public void ownerChecker(Human human) {
         if(ownerList.contains(human)) {
-            System.out.println(human.firstName + " był/jest włąścicielem pojazdu.");
+            System.out.println(human.firstName + " był/jest właścicielem pojazdu.");
         } else {
             System.out.println(human.firstName + " nigdy nie był właścicielem tego pojazdu");
         }

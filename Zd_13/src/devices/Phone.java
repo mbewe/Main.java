@@ -80,11 +80,17 @@ public class Phone extends Device {
     }
 
     public void allAppsNames() {
+        collectionOfApplications.sort(new Comparator<Application>() {
+            @Override
+            public int compare(Application a, Application b) {
+                return a.name.compareTo(b.name);
+            }
+        });
 
-
-        for (Application app : collectionOfApplications) {
-            System.out.println(app.name);
+        for (Application p : collectionOfApplications) {
+            System.out.println(p.name);
         }
+
     }
 
     public void allAppsPrice() {

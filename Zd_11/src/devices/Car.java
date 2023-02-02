@@ -71,7 +71,7 @@ public abstract class Car extends Device{
         seller.addMoney(price);
         buyer.collectMoney(price);
 
-        System.out.println("Transakcja się powiodła. To auto: " + this + " zostało sprzedane do: " + buyer);
+        System.out.println("Transakcja się powiodła. To auto: " + seller.firstName + " zostało sprzedane do: " + buyer.firstName);
     }
         public String toString() {
             return this.producer + " " + this.model + " " + this.yearOfProduction;

@@ -8,7 +8,7 @@ public abstract class Car extends Device{
     int mileage;
     String color;
     String type;
-    Double value;
+    public Double value;
 
     public Car(String producer, String model,Double value) {
 

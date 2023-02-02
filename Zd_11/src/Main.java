@@ -17,7 +17,9 @@ public class Main {
 
         me.setSalary();
         me.setCar();
-        me.getCar(0).sell(me,you,5000.0);
+        me.setCar();
+
+        me.valueOfCars();
 
     }
 }
